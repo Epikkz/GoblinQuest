@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+.game-container {
+    position: relative;
+    width: 1200px; /* Increased size */
+    height: 600px; /* Increased size */
+    border: 2px solid #333;
+    background: url('untitled.jpg') no-repeat center center / cover; /* Background image */
+    overflow: hidden;
+    border-radius: 2px; /* Optional: Rounded corners for the container */
+}
+
+.health-bar-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 30px; /* Increased height for a cooler look */
+    padding: 5px;
+}
+
+.health-bar {
+    width: 45%;
+    height: 100%;
+    background: #333;
+    overflow: hidden;
+    position: relative;
+}
+
+.health-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #f71601, #3dcd09); /* Gradient color for the health bar */
+    transition: width 0.3s ease; /* Smooth transition for health change */
+}
+
+.timer {
+    position: absolute;
+    top: 15px; /* Adjusted for better alignment */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial', sans-serif;
+    font-size: 55px; /* Increased font size */
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow to make the timer stand out */
+}
+
+/* Player and enemy styles using placeholder images */
+.player, .enemy {
+    position: absolute;
+    bottom: 0;
+    width: 200px; /* Adjusted size */
+    height: 300px; /* Adjusted size */
+    background-size: cover;
+    transition: transform 0.3s ease; /* Smooth transition for movement */
+}
+
+/* Placeholder images for player and enemy */
+.player {
+    background-image: url('http://dummyimage.com/400x200');
+}
+
+.enemy {
+    right: 50px;
+    background-image: url('http://dummyimage.com/400x200');
+}
+
+/* Hitbox following the size of the player and enemy */
+.hitbox {
+    position: absolute;
+    bottom: 0;
+    width: 150px; /* Same width as the player */
+    height: 300px; /* Same height as the player */
+    background: rgba(255, 255, 0, 0.5);
+    display: none;
+}
+
+/* Jump animation */
+.jumping {
+    animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px); /* Adjust jump height */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fighting Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="health-bar-container">
+      <div class="health-bar">
+        <span id="player-health" style="width: 100%;"></span>
+      </div>
+      <div class="timer" id="timer">60</div>
+      <div class="health-bar">
+        <span id="enemy-health" style="width: 100%;"></span>
+      </div>
+    </div>
+    <div class="player"></div>
+    <div class="enemy"></div>
+    <div class="hitbox"></div>
+  </div>
+
+  <script src="animate.js"></script>
+  <script src="movement.js"></script>
+  <script src="gameLogic.js"></script>
+</body>
+</html>
